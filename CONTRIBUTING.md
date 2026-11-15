@@ -1,4 +1,4 @@
-# Contributing to ctx
+# Contributing to repocxt
 
 Thanks for your interest. The project is small and intentionally dependency-light, so keep that in mind when you open PRs: every feature should earn its place.
 
@@ -19,11 +19,11 @@ Open an issue describing the problem you are solving, not just the flag you want
 
 ## Development setup
 
-Requires Python 3.9+.
+Requires Python 3.10+.
 
 ```bash
-git clone https://github.com/UnknownDevvIn/ctx
-cd ctx
+git clone https://github.com/UnknownDevvIn/repocxt
+cd repocxt
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"

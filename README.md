@@ -1,6 +1,7 @@
-# ctx
+# repocxt
 
-Package a repository into a single, LLM-ready context file.
+`repocxt` packages a repository into a single, LLM-ready context file.
+
 
 `ctx` walks a directory and emits one markdown file containing an ASCII tree of
 the repo, the contents of every source file (fenced with language hints), and a
@@ -14,7 +15,7 @@ Running `ctx` on this repo (tree trimmed for the README; the header counts are r
 ````text
 # repo — context
 
-- files: **26** · **68860 bytes** · ~**20208 tokens**
+- files: **26** · **68897 bytes** · ~**20217 tokens**
 
 ## Tree
 
@@ -148,8 +149,8 @@ you can read, diff, and paste anywhere.
 ## Development
 
 ```bash
-git clone <your fork>/ctx
-cd ctx
+git clone <your fork>/repocxt
+cd repocxt
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 ```
