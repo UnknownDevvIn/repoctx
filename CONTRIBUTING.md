@@ -22,7 +22,7 @@ Open an issue describing the problem you are solving, not just the flag you want
 Requires Python 3.9+.
 
 ```bash
-git clone https://github.com/devanshx/ctx
+git clone https://github.com/UnknownDevvIn/ctx
 cd ctx
 python3 -m venv .venv
 source .venv/bin/activate

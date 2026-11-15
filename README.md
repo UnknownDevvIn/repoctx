@@ -14,7 +14,7 @@ Running `ctx` on this repo (tree trimmed for the README; the header counts are r
 ````text
 # repo — context
 
-- files: **26** · **67694 bytes** · ~**19852 tokens**
+- files: **26** · **67650 bytes** · ~**19838 tokens**
 
 ## Tree
 
@@ -63,7 +63,7 @@ Running `ctx` on this repo (tree trimmed for the README; the header counts are r
 
 ## Install
 
-Requires Python 3.9+.
+Requires Python 3.10+.
 
 ```bash
 pipx install .
@@ -160,16 +160,16 @@ python3 -m ctx --help
 
 Honest status of what is and isn't verified:
 
-- **Tested on:** Linux, Python 3.12 — 101 automated tests pass (`pytest`),
+- **Tested on:** Linux, Python 3.12 — 106 automated tests pass (`pytest`),
   `ruff` clean, wheel + sdist build clean, `twine check` passes. Edge cases
   covered by tests: nested/overriding `.gitignore`, negation, directory-only
   patterns, filenames with spaces, undecodable and binary files, oversized
   files, symlinks (not followed for dirs), backtick-fences inside file bodies,
   and `--max-tokens` / `--json` behavior.
-- **Expected but not yet verified:** macOS and Windows, and Python 3.9–3.11.
+- **Expected but not yet verified:** macOS and Windows, and Python 3.10–3.11.
   The code is pure Python + `pathspec` with no OS-specific calls, so it
   *should* run anywhere, but only Linux/3.12 has been exercised. The GitHub
-  Actions matrix (`ci.yml`) runs 3.9–3.12 on Linux for every push; wider
+  Actions matrix (`ci.yml`) runs 3.10–3.12 on Linux for every push; wider
   platform testing is welcome via PRs / CI runs.
 - **Not verified at all:** any real PyPI publication (needs a maintainer token).
 
@@ -178,4 +178,4 @@ Python version, and the error — that's the fastest way this list gets shorter.
 
 ## License
 
-[MIT](LICENSE) © 2026 devanshx
+[MIT](LICENSE) © 2026 Kamran
