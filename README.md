@@ -14,7 +14,7 @@ Running `ctx` on this repo (tree trimmed for the README; the header counts are r
 ````text
 # repo — context
 
-- files: **26** · **67763 bytes** · ~**19876 tokens**
+- files: **26** · **68860 bytes** · ~**20208 tokens**
 
 ## Tree
 
@@ -95,8 +95,8 @@ usage: ctx [-h] [-o FILE] [--include GLOB] [--exclude GLOB] [--max-size BYTES]
 
 - `root` — directory to pack. Defaults to the current directory. The header
   uses the directory's name (or `repo` when the name is empty, e.g. `.`).
-- `-o FILE, --output FILE` — write to a file instead of stdout. `-o -` means
-  stdout explicitly.
+- `-o FILE, --output FILE` — write to a file. Defaults to `ctx.md` in the
+  current directory; `-o -` means stdout explicitly.
 - `--include GLOB` / `--exclude GLOB` — keep or drop paths matching a glob
   (repeatable; pathspec syntax). Both are applied after ignore filtering, and
   `--exclude` wins over `--include`.
@@ -111,11 +111,11 @@ usage: ctx [-h] [-o FILE] [--include GLOB] [--exclude GLOB] [--max-size BYTES]
 The output is self-contained, so driving an LLM is two steps:
 
 ```bash
-# write it to a file for an agent that can read files
-ctx -o ctx.md
+# writes ctx.md in the current directory by default
+ctx
 
 # or just paste stdout straight into the prompt
-ctx | head -c 20000
+ctx -o - | head -c 20000
 ```
 
 Point the model at `ctx.md` ("this is my whole repo, read it") or paste it

@@ -6,3 +6,5 @@ dist/
 build/
 *.egg-info/
 .venv/
+# context output the tool writes into the current directory
+ctx.md

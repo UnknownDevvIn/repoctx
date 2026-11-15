@@ -74,6 +74,19 @@ def test_output_file_is_written(tmp_path, capsys):
     assert "`ctx`" in text
 
 
+def test_default_writes_ctx_md_in_cwd(tmp_path, capsys, monkeypatch):
+    make_repo(tmp_path, {"hello.txt": "hi\n"})
+    monkeypatch.chdir(tmp_path)
+    rc = main([])  # no -o: should write ctx.md, not stdout
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert out == ""  # nothing printed to stdout
+    created = tmp_path / "ctx.md"
+    assert created.is_file()
+    assert "## Files" in created.read_text()
+    assert "hello.txt" in created.read_text()
+
+
 # --- include / exclude ------------------------------------------------
 
 

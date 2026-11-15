@@ -36,7 +36,7 @@ def build_parser() -> argparse.ArgumentParser:
         "-o",
         "--output",
         metavar="FILE",
-        help="write to FILE instead of stdout",
+        help="write to FILE (default: ctx.md; use - for stdout)",
     )
     parser.add_argument(
         "--include",
@@ -91,9 +91,14 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     exclude = list(args.exclude)
-    output_path: Path | None = None
-    if args.output and args.output != "-":
+    output_path: Path | None
+    if args.output == "-":
+        output_path = None  # explicit stdout
+    elif args.output:
         output_path = Path(args.output).resolve()
+    else:
+        output_path = (Path.cwd() / "ctx.md").resolve()
+    if output_path is not None:
         # Don't pack the file we are about to write (or one from a previous run).
         try:
             excluded_above = output_path.relative_to(root.resolve())
