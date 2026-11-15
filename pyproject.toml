@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ctx"
+name = "repocxt"
 version = "0.1.0"
 description = "Package a repository into a single, LLM-ready context file with a tree, file contents, and a token estimate."
 readme = "README.md"

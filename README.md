@@ -14,7 +14,7 @@ Running `ctx` on this repo (tree trimmed for the README; the header counts are r
 ````text
 # repo — context
 
-- files: **26** · **67650 bytes** · ~**19838 tokens**
+- files: **26** · **67763 bytes** · ~**19876 tokens**
 
 ## Tree
 
@@ -63,7 +63,14 @@ Running `ctx` on this repo (tree trimmed for the README; the header counts are r
 
 ## Install
 
-Requires Python 3.10+.
+Requires Python 3.10+. The package is published on PyPI as `repocxt`; the
+command you run is `ctx`.
+
+```bash
+pipx install repocxt
+```
+
+Or install from a checkout directly:
 
 ```bash
 pipx install .
@@ -72,10 +79,11 @@ pipx install .
 Or with plain pip:
 
 ```bash
-pip install .
+pip install repocxt
 ```
 
-Either installs a `ctx` command (it also runs as `python -m ctx`).
+However you install it, you get a `ctx` command (it also runs as
+`python -m ctx`).
 
 ## Usage
 
